@@ -3,11 +3,7 @@
     themes:
         foodie --default,
         light,
-        dark,
-        bumblebee,
-        retro,
-        cyberpunk,
-        pastel;
+        dark;
 }
 @plugin "daisyui/theme" {
     name: "foodie";
@@ -42,20 +38,6 @@
     --border: 1px;
     --depth: 1;
     --noise: 1;
-}
-
-html,
-body,
-#root {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-
-    /* Style variables */
-    --navbar-height: 64px;
-    --min-app-width: 350px;
-
-    min-width: var(--min-app-width);
 }
 
 @font-face {
