@@ -2,8 +2,6 @@
 
 While working on my [Food Roulette](https://github.com/github-bdem/food-roulette) project I decided that I really liked the config I had worked up there. I had the linting, prettier rules, aliasing, etc. all just how I liked them. So in order to speed up development using this tech stack, I created this [Template Repo](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template) so that I can just spin up a new project and not have to re-configure everything.
 
-![Basic project page](https://github.com/github-bdem/vite-react-tailwind-project-template/blob/main/public/project-preview.png?raw=true)
-
 ## Built Using
 
 This project was created using:
