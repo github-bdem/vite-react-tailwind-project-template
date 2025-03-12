@@ -1,64 +1,20 @@
-import { APIProvider } from "@vis.gl/react-google-maps";
-import ResultsSidebar from "src/components/ResultsSidebar/ResultsSidebar";
-import FilterSidebar from "src/components/FilterSidebar/FilterSidebar";
-import PreferencesMenu from "./components/PreferencesMenu/PreferencesMenu";
-import FoodMapProvider from "./components/FoodMap/FoodMapContextProvider";
-import FilterProvider from "./components/FilterSidebar/FilterContextProvider";
-import UpdateOnMoveToggle from "./components/UpdateOnMoveToggle/UpdateOnMoveToggle";
-import FoodMap from "./components/FoodMap/FoodMap";
-
-import "./App.css";
+import Counter from "@components/Counter/Counter";
+import AdjustCountButtons from "@components/Counter/AdjustCountButtons";
+import CounterContextProvider from "./components/Counter/CounterContextProvider";
 
 function App() {
     return (
-        <div className="drawer drawer-end flex size-full">
-            <APIProvider
-                apiKey={`${import.meta.env.VITE_GMAPS_API_KEY}`}
-                region="US"
-            >
-                <FoodMapProvider>
-                    <FilterProvider>
-                        <input
-                            id="filter-drawer"
-                            type="checkbox"
-                            className="drawer-toggle"
-                        />
-                        <div className="drawer-content flex size-full flex-col">
-                            <div className="navbar bg-primary navbar-height flex justify-between p-4 shadow-sm">
-                                <div
-                                    className="text-base md:text-2xl"
-                                    style={{
-                                        fontFamily: "Momentz",
-                                    }}
-                                >
-                                    Food Roulette
-                                </div>
-                                <div className="flex flex-row gap-4">
-                                    <UpdateOnMoveToggle />
-                                    <PreferencesMenu />
-                                </div>
-                            </div>
-                            <div className="map-and-sidebar-container-height-hack flex h-full flex-col-reverse md:h-full md:flex-row">
-                                <div className="flex h-1/2 w-full overflow-y-scroll md:h-full md:w-[450px]">
-                                    <ResultsSidebar />
-                                </div>
-                                <div className="lex-col flex h-1/2 items-center justify-center md:h-full md:w-full">
-                                    <FoodMap />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="drawer-side lg:drawer-open h-full">
-                            <label
-                                htmlFor="filter-drawer"
-                                aria-label="close sidebar"
-                                className="drawer-overlay"
-                            />
-                            <FilterSidebar />
-                        </div>
-                    </FilterProvider>
-                </FoodMapProvider>
-            </APIProvider>
-        </div>
+        <CounterContextProvider>
+            <div className="bg-primary flex h-screen w-screen flex-col items-center">
+                <div className="flex flex-col items-center gap-2">
+                    <div style={{ fontFamily: "Momentz" }} className="text-2xl">
+                        Vite React Tailwind Project Template
+                    </div>
+                    <AdjustCountButtons />
+                    <Counter />
+                </div>
+            </div>
+        </CounterContextProvider>
     );
 }
 
